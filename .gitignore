@@ -1,0 +1,8 @@
+node_modules/
+apps/outer/public/
+apps/outer/node_modules/
+apps/inner/build/
+apps/inner/node_modules/
+.env
+*.log
+.DS_Store

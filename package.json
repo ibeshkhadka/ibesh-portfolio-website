@@ -1,0 +1,24 @@
+{
+    "name": "ibesh-portfolio",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Ibesh Khadka portfolio — 3D outer shell (apps/outer) + 2D OS inner site (apps/inner) in one folder.",
+    "scripts": {
+        "dev:outer": "npm run dev --prefix apps/outer",
+        "dev:inner": "npm run start --prefix apps/inner",
+        "dev": "concurrently -n outer,inner -c blue,green \"npm run dev:outer\" \"npm run dev:inner\"",
+        "build:outer": "npm run build --prefix apps/outer",
+        "build:inner": "npm run build --prefix apps/inner",
+        "build": "npm run build:outer && npm run build:inner",
+        "start": "node server/index.js"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    },
+    "dependencies": {
+        "body-parser": "^2.3.0",
+        "compression": "^1.8.1",
+        "express": "^4.19.2",
+        "nodemailer": "^10.0.1"
+    }
+}
