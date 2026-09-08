@@ -37,12 +37,12 @@ jobs:
         run: npm ci --prefix apps/inner
 
       - name: Build outer (3D room)
-        run: npm run build --prefix apps/outer
+        run: CI=false npm run build --prefix apps/outer
         env:
           PUBLIC_URL: /ibesh-portfolio-website
 
       - name: Build inner (2D OS)
-        run: npm run build --prefix apps/inner
+        run: CI=false npm run build --prefix apps/inner
         env:
           PUBLIC_URL: /ibesh-portfolio-website/os
 
