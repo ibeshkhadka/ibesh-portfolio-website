@@ -183,8 +183,10 @@ export default class MonitorScreen extends EventEmitter {
         };
 
         // Set iframe attributes
-        // PROD: same-origin inner app served at /os by the unified server
-        iframe.src = '/os/';
+        // Determine production iframe src based on hostname
+        const isGitHubPages = window.location.hostname.endsWith('github.io');
+        const prodIframeSrc = isGitHubPages ? '/ibesh-portfolio-website/os/' : '/os/';
+        iframe.src = prodIframeSrc;
         /**
          * Use inner dev server if query params are present
          * (`npm run dev` runs outer + inner together; open outer with ?dev)
